@@ -16,11 +16,15 @@ export default function LoginScreen() {
     if (!loginEmail) return setLoginError('Please enter email');
     try {
       setLoginLoading(true);
-      const res = await fetch('/api/auth/request-otp', {
+      const res = await fetch((import.meta.env.VITE_API_BASE_URL || "") + '/api/auth/request-otp', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: loginEmail }),
       });
+      const contentType = res.headers.get("content-type");
+      if (!contentType || !contentType.includes("application/json")) {
+        throw new Error("Unable to connect to the server (Expected JSON, received HTML). Please check if VITE_API_BASE_URL is set correctly and the backend is running.");
+      }
       const data = await res.json();
       if (!res.ok) throw new Error(data.error);
       setOtpSent(true);
@@ -43,11 +47,15 @@ export default function LoginScreen() {
     try {
       setLoginError('');
       setLoginLoading(true);
-      const res = await fetch('/api/auth/verify-otp', {
+      const res = await fetch((import.meta.env.VITE_API_BASE_URL || "") + '/api/auth/verify-otp', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: loginEmail, otp: loginOtp }),
       });
+      const contentType = res.headers.get("content-type");
+      if (!contentType || !contentType.includes("application/json")) {
+        throw new Error("Unable to connect to the server (Expected JSON, received HTML). Please check backend connection.");
+      }
       const data = await res.json();
       if (!res.ok) throw new Error(data.error);
       const userData = normalizeUser(data.user);

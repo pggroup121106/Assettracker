@@ -122,7 +122,28 @@ import { getDefaultAssetHeaders } from "./server/sheetHeaders.js";
 dotenv.config();
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
+
+// CORS setup for Netlify frontend
+app.use((req, res, next) => {
+  const allowedOrigins = [
+    process.env.FRONTEND_URL || "http://localhost:5173",
+    process.env.NETLIFY_URL // e.g. https://your-app.netlify.app
+  ];
+  const origin = req.headers.origin;
+  if (origin) {
+    res.setHeader("Access-Control-Allow-Origin", origin);
+  } else {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+  }
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(200);
+  }
+  next();
+});
 
 app.use(express.json({ limit: '50mb' }));
 

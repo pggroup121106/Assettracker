@@ -52,7 +52,7 @@ export default function MissingItemsPage() {
 
   const markRecovered = async (record: MissingItemRecord) => {
     try {
-      const res = await fetch(`/api/missing-items/${encodeURIComponent(record['Record ID'])}/recover`, {
+      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL || ""}/api/missing-items/${encodeURIComponent(record['Record ID'])}/recover`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ recoveredBy: 'Admin' }),

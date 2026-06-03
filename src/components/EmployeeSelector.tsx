@@ -77,7 +77,7 @@ export default function EmployeeSelector({ values, onChange, onEmployeeResolved 
       const params = new URLSearchParams();
       if (id) params.set('employeeId', id);
       if (em) params.set('email', em);
-      const res = await fetch(`/api/employees/lookup?${params}`);
+      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL || ""}/api/employees/lookup?${params}`);
       const data = await parseJsonResponse<{ employee?: Employee; assetCount?: number }>(res);
       if (data.employee) {
         applyEmployee(data.employee as Employee, typeof data.assetCount === 'number' ? data.assetCount : null);

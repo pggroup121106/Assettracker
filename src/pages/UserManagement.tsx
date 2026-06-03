@@ -51,7 +51,7 @@ export default function UserManagement() {
   const isITAdmin = loggedInUser?.role === 'IT Admin';
 
   useEffect(() => {
-    fetch('/api/settings')
+    fetch((import.meta.env.VITE_API_BASE_URL || "") + '/api/settings')
       .then((r) => (r.ok ? r.json() : null))
       .then((data) => {
         if (data) {
@@ -183,7 +183,7 @@ export default function UserManagement() {
   const executeDelete = async () => {
     if (!deleteConfirmEmail) return;
     try {
-      const res = await fetch(`/api/users/${encodeURIComponent(deleteConfirmEmail)}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL || ""}/api/users/${encodeURIComponent(deleteConfirmEmail)}`, {
         method: 'DELETE',
       });
       const data = await res.json();

@@ -36,7 +36,7 @@ export default function EmployeeProfilePage() {
   const handleDelete = async () => {
     if (!employee) return;
     try {
-      const res = await fetch(`/api/employees/${encodeURIComponent(employee.employeeId)}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL || ""}/api/employees/${encodeURIComponent(employee.employeeId)}`, {
         method: 'DELETE',
       });
       const data = await res.json();
@@ -66,7 +66,7 @@ export default function EmployeeProfilePage() {
       return;
     }
     setFetchingOne(true);
-    fetch(`/api/employees/${encodeURIComponent(id)}`)
+    fetch(`${import.meta.env.VITE_API_BASE_URL || ""}/api/employees/${encodeURIComponent(id)}`)
       .then((r) => parseJsonResponse<{ employee?: Employee }>(r))
       .then((data) => setFetchedEmployee(data.employee || null))
       .catch(() => setFetchedEmployee(null))
@@ -112,7 +112,7 @@ export default function EmployeeProfilePage() {
 
   useEffect(() => {
     if (!employee) return;
-    fetch('/api/missing-items')
+    fetch((import.meta.env.VITE_API_BASE_URL || "") + '/api/missing-items')
       .then((r) => parseJsonResponse<{ items?: MissingItemRecord[] }>(r))
       .then((data) => {
         const name = employee.name.toLowerCase();
@@ -132,7 +132,7 @@ export default function EmployeeProfilePage() {
   useEffect(() => {
     if (!routeId) return;
     setHistoryLoading(true);
-    fetch(`/api/employees/${encodeURIComponent(routeId)}/history`)
+    fetch(`${import.meta.env.VITE_API_BASE_URL || ""}/api/employees/${encodeURIComponent(routeId)}/history`)
       .then(async (r) => {
         if (!r.ok) return { history: [] as AssignmentHistoryEntry[] };
         return parseJsonResponse<{ history?: AssignmentHistoryEntry[] }>(r);

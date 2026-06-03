@@ -101,7 +101,7 @@ export function useUsersData() {
     }
 
     try {
-      const localRes = await fetch('/api/users/local', { signal: controller.signal });
+      const localRes = await fetch((import.meta.env.VITE_API_BASE_URL || "") + '/api/users/local', { signal: controller.signal });
       if (localRes.ok) {
         const localUsers = extractUserList(await localRes.json());
         if (localUsers.length > 0 && mountedRef.current) {

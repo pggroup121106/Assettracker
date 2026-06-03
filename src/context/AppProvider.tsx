@@ -118,7 +118,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
         if (now - loginTime < DAY_MS) {
           setUser(parsedUser);
 
-          fetch('/api/users')
+          fetch((import.meta.env.VITE_API_BASE_URL || "") + '/api/users')
             .then((r) => (r.ok ? r.json() : null))
             .then((usersList) => {
               if (usersList && Array.isArray(usersList)) {
@@ -348,7 +348,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const executeDelete = useCallback(
     async (id: number | string) => {
       if (!user) throw new Error('Not authenticated');
-      const res = await fetch(`/api/assets/${id}?userEmail=${encodeURIComponent(user.email)}`, { method: 'DELETE' });
+      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL || ""}/api/assets/${id}?userEmail=${encodeURIComponent(user.email)}`, { method: 'DELETE' });
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
         throw new Error(data.error || 'Delete failed');

@@ -122,7 +122,7 @@ export default function DashboardPage() {
   const isAdmin = user?.role === 'IT Admin' || user?.role === 'Admin';
 
   useEffect(() => {
-    fetch('/api/settings')
+    fetch((import.meta.env.VITE_API_BASE_URL || "") + '/api/settings')
       .then((r) => r.json())
       .then((data) => {
         setLocations(data.locations || []);
@@ -146,7 +146,7 @@ export default function DashboardPage() {
 
   const executeDeleteInventory = async (itemId: string) => {
     try {
-      const res = await fetch(`/api/inventory/${encodeURIComponent(itemId)}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL || ""}/api/inventory/${encodeURIComponent(itemId)}`, {
         method: 'DELETE',
       });
       if (!res.ok) throw new Error('Delete failed');
@@ -315,7 +315,7 @@ export default function DashboardPage() {
       const ws = wb.Sheets[wb.SheetNames[0]];
       const json = XLSX.utils.sheet_to_json(ws);
       toast.success(`Found ${json.length} records. Importing...`);
-      const res = await fetch('/api/assets/bulk', {
+      const res = await fetch((import.meta.env.VITE_API_BASE_URL || "") + '/api/assets/bulk', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ assets: json }),

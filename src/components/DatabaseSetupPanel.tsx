@@ -10,7 +10,7 @@ export default function DatabaseSetupPanel() {
   const runLegacy = async () => {
     setBusy('legacy');
     try {
-      const res = await fetch('/api/setup', { method: 'POST' });
+      const res = await fetch((import.meta.env.VITE_API_BASE_URL || "") + '/api/setup', { method: 'POST' });
       const data = await parseJsonResponse<{ error?: string; success?: boolean }>(res);
       if (!res.ok || data.error) throw new Error(data.error || 'Setup failed');
       toast.success(`${DATABASE_LABEL} category sheets ready (legacy mode)`);
@@ -24,7 +24,7 @@ export default function DatabaseSetupPanel() {
   const runRedesigned = async () => {
     setBusy('redesigned');
     try {
-      const res = await fetch('/api/setup/redesigned', { method: 'POST' });
+      const res = await fetch((import.meta.env.VITE_API_BASE_URL || "") + '/api/setup/redesigned', { method: 'POST' });
       const data = await parseJsonResponse<{ error?: string; success?: boolean }>(res);
       if (!res.ok || data.error) throw new Error(data.error || 'Setup failed');
       toast.success(`${DATABASE_LABEL} redesigned tables ready — single Assets master table`);
@@ -47,7 +47,7 @@ export default function DatabaseSetupPanel() {
 
     setBusy('fresh');
     try {
-      const res = await fetch('/api/setup/redesigned-fresh', { method: 'POST' });
+      const res = await fetch((import.meta.env.VITE_API_BASE_URL || "") + '/api/setup/redesigned-fresh', { method: 'POST' });
       const data = await parseJsonResponse<{ error?: string; success?: boolean; message?: string }>(res);
       if (!res.ok || data.error) throw new Error(data.error || 'Reset failed');
       toast.success(data.message || 'Database reset complete');

@@ -27,7 +27,7 @@ export default function CreateEmployeeModal({ open, initial, onClose, onSaved }:
 
   useEffect(() => {
     if (!open) return;
-    fetch('/api/settings')
+    fetch((import.meta.env.VITE_API_BASE_URL || "") + '/api/settings')
       .then((r) => parseJsonResponse<AppSettings>(r))
       .then(setSettings)
       .catch(() => setSettings({ locations: [], plants: [] }));

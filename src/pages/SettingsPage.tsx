@@ -76,7 +76,7 @@ export default function SettingsPage() {
   useEffect(() => {
     const load = async () => {
       try {
-        const res = await fetch('/api/settings?refresh=1');
+        const res = await fetch((import.meta.env.VITE_API_BASE_URL || "") + '/api/settings?refresh=1');
         if (!res.ok) throw new Error('Failed to load settings');
         const data = await res.json();
         setSettings({
@@ -97,7 +97,7 @@ export default function SettingsPage() {
     setSaving(true);
     setActionMessage(actionMsg);
     try {
-      const res = await fetch('/api/settings', {
+      const res = await fetch((import.meta.env.VITE_API_BASE_URL || "") + '/api/settings', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(next),
@@ -149,7 +149,7 @@ export default function SettingsPage() {
     setSaving(true);
     setActionMessage('Renaming location...');
     try {
-      const res = await fetch('/api/settings/rename-location', {
+      const res = await fetch((import.meta.env.VITE_API_BASE_URL || "") + '/api/settings/rename-location', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ oldName, newName }),
@@ -171,7 +171,7 @@ export default function SettingsPage() {
     setSaving(true);
     setActionMessage(deleteOrArchive === 'archive' ? 'Archiving location...' : 'Deleting location...');
     try {
-      const res = await fetch('/api/settings/delete-location', {
+      const res = await fetch((import.meta.env.VITE_API_BASE_URL || "") + '/api/settings/delete-location', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, deleteOrArchive }),
@@ -227,7 +227,7 @@ export default function SettingsPage() {
     setSaving(true);
     setActionMessage('Renaming plant...');
     try {
-      const res = await fetch('/api/settings/rename-plant', {
+      const res = await fetch((import.meta.env.VITE_API_BASE_URL || "") + '/api/settings/rename-plant', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ oldCode, newCode: cleanCode, newName: cleanName, location }),
@@ -249,7 +249,7 @@ export default function SettingsPage() {
     setSaving(true);
     setActionMessage(deleteOrArchive === 'archive' ? 'Archiving plant...' : 'Deleting plant...');
     try {
-      const res = await fetch('/api/settings/delete-plant', {
+      const res = await fetch((import.meta.env.VITE_API_BASE_URL || "") + '/api/settings/delete-plant', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ code, deleteOrArchive }),

@@ -59,7 +59,7 @@ export default function MarkMissingModal({ open, assets, onClose, onSaved }: Mar
         'Recovered Date': '',
         'Recovered By': '',
       };
-      const res = await fetch('/api/missing-items', {
+      const res = await fetch((import.meta.env.VITE_API_BASE_URL || "") + '/api/missing-items', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ item: row, syncSheet: true }),

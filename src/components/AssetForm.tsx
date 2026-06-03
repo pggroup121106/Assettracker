@@ -85,7 +85,7 @@ export default function AssetForm({ initialData, onSubmit, onCancel, loading, la
   const [dynamicFieldErrors, setDynamicFieldErrors] = useState<Record<string, string>>({});
 
   useEffect(() => {
-    fetch('/api/settings')
+    fetch((import.meta.env.VITE_API_BASE_URL || "") + '/api/settings')
       .then((r) => r.json())
       .then((data) => {
         setAppSettings({
@@ -132,7 +132,7 @@ export default function AssetForm({ initialData, onSubmit, onCancel, loading, la
   const persistCatalog = (updater: AssetCatalog | ((prev: AssetCatalog) => AssetCatalog)) => {
     setCatalog((prev) => {
       const next = typeof updater === "function" ? updater(prev) : updater;
-      fetch("/api/settings", {
+      fetch((import.meta.env.VITE_API_BASE_URL || "") + '/api/settings', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -410,7 +410,7 @@ export default function AssetForm({ initialData, onSubmit, onCancel, loading, la
     try {
       const params = new URLSearchParams({ field, value: value.trim() });
       if (initialData?.id) params.set("excludeId", String(initialData.id));
-      const res = await fetch(`/api/assets/check-unique?${params}`);
+      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL || ""}/api/assets/check-unique?${params}`);
       const data = await res.json();
       if (data.duplicate) {
         setFieldErrors((prev) => ({
@@ -512,7 +512,7 @@ export default function AssetForm({ initialData, onSubmit, onCancel, loading, la
     reader.onload = async (evt) => {
       const base64 = evt.target?.result as string;
       try {
-        const res = await fetch('/api/upload', {
+        const res = await fetch((import.meta.env.VITE_API_BASE_URL || "") + '/api/upload', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ filename: file.name, fileData: base64 })
@@ -543,7 +543,7 @@ export default function AssetForm({ initialData, onSubmit, onCancel, loading, la
     reader.onload = async (evt) => {
       const base64 = evt.target?.result as string;
       try {
-        const res = await fetch("/api/upload", {
+        const res = await fetch((import.meta.env.VITE_API_BASE_URL || "") + '/api/upload', {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ filename: file.name, fileData: base64 }),

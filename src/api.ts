@@ -1,6 +1,6 @@
 export type ApiResponse<T> = { ok: boolean; data?: T; error?: string };
 
-const API_BASE = '/api';
+const API_BASE = import.meta.env.VITE_API_BASE_URL || '/api';
 
 async function apiRequest<T>(path: string, options: RequestInit = {}, auth: boolean = true): Promise<ApiResponse<T>> {
   const headers: HeadersInit = { 'Content-Type': 'application/json', ...(options.headers || {}) };

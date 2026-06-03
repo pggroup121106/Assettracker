@@ -137,7 +137,7 @@ export default function InventoryPage() {
 
   const executeDelete = async (itemId: string) => {
     try {
-      const res = await fetch(`/api/inventory/${encodeURIComponent(itemId)}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL || ""}/api/inventory/${encodeURIComponent(itemId)}`, {
         method: 'DELETE',
       });
       if (!res.ok) throw new Error('Delete failed');

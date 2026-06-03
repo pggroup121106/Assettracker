@@ -19,7 +19,7 @@ export default function AssetDetailPage() {
 
   useEffect(() => {
     if (!assetId) return;
-    fetch(`/api/assets/${encodeURIComponent(assetId)}/history`)
+    fetch(`${import.meta.env.VITE_API_BASE_URL || ""}/api/assets/${encodeURIComponent(assetId)}/history`)
       .then((r) => (r.ok ? r.json() : { history: [] }))
       .then((d) => setHistory(d.history || []))
       .catch(() => setHistory([]));

@@ -124,6 +124,14 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
 
+// Strip Netlify Functions route prefix if running in Netlify environment
+app.use((req, res, next) => {
+  if (req.url.startsWith("/.netlify/functions/api")) {
+    req.url = req.url.replace("/.netlify/functions/api", "");
+  }
+  next();
+});
+
 // CORS setup for Netlify frontend
 app.use((req, res, next) => {
   const allowedOrigins = [
@@ -1909,7 +1917,7 @@ async function startServer() {
   });
 }
 
-if (!process.env.VERCEL) {
+if (!process.env.VERCEL && !process.env.NETLIFY) {
   startServer();
 }
 

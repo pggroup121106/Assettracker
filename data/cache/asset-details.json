@@ -1,0 +1,39 @@
+{
+  "2": {
+    "processor": "Core i3",
+    "ram": "8GB",
+    "rom": "256GB",
+    "windows_version": "Windows 11 Pro"
+  },
+  "3": {
+    "processor": "",
+    "ram": "",
+    "rom": "",
+    "windows_version": "",
+    "charger_available": ""
+  },
+  "4": {
+    "processor": "Core i5",
+    "ram": "8GB",
+    "rom": "256GB",
+    "windows_version": "Windows 11 Pro"
+  },
+  "6": {
+    "processor": "Core i3",
+    "ram": "16GB",
+    "rom": "512GB",
+    "windows_version": "Windows 11 Pro"
+  },
+  "11": {
+    "processor": "Core i9",
+    "ram": "8GB",
+    "rom": "256GB",
+    "windows_version": "Windows 11 Pro"
+  },
+  "15": {
+    "processor": "Core i5",
+    "ram": "8GB",
+    "rom": "256GB",
+    "windows_version": "Windows 11 Pro"
+  }
+}

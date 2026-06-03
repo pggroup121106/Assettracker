@@ -1,0 +1,713 @@
+{
+  "users": [
+    {
+      "email": "software.2040@pgel.in",
+      "role": "IT Admin",
+      "locations": [
+        "All"
+      ],
+      "plants": [
+        "All"
+      ],
+      "categories": [
+        "All"
+      ]
+    },
+    {
+      "email": "vikaskumar9310577501@gmail.com",
+      "role": "User",
+      "locations": [
+        "BHIWADI"
+      ],
+      "plants": [
+        "4020",
+        "2040"
+      ],
+      "categories": [
+        "IT Assets",
+        "Software / License Assets"
+      ]
+    }
+  ],
+  "settings": {
+    "locations": [
+      "BHIWADI"
+    ],
+    "plants": [
+      {
+        "code": "2040",
+        "name": "PG TECHNOPLAST",
+        "location": "BHIWADI"
+      },
+      {
+        "code": "4020",
+        "name": "NEXT GENRATION MANUFACTURE",
+        "location": "BHIWADI"
+      }
+    ],
+    "assetFields": [
+      {
+        "key": "department",
+        "label": "Department",
+        "enabled": true
+      },
+      {
+        "key": "make",
+        "label": "Brand/Make",
+        "enabled": true
+      },
+      {
+        "key": "model",
+        "label": "Model",
+        "enabled": true
+      },
+      {
+        "key": "vendorName",
+        "label": "Vendor Name",
+        "enabled": true
+      },
+      {
+        "key": "ram",
+        "label": "RAM",
+        "enabled": true
+      },
+      {
+        "key": "ssd",
+        "label": "Storage",
+        "enabled": true
+      },
+      {
+        "key": "cpu",
+        "label": "CPU",
+        "enabled": true
+      },
+      {
+        "key": "windowsVersion",
+        "label": "Windows Version",
+        "enabled": true
+      },
+      {
+        "key": "macAddress",
+        "label": "MAC Address",
+        "enabled": true
+      },
+      {
+        "key": "contactName",
+        "label": "Contact Person",
+        "enabled": true
+      },
+      {
+        "key": "contactEmail",
+        "label": "Contact Email",
+        "enabled": true
+      },
+      {
+        "key": "contactMobile",
+        "label": "Contact Mobile",
+        "enabled": true
+      }
+    ],
+    "catalog": {
+      "brands": {
+        "Dell": [
+          "Latitude 5420",
+          "Latitude 5430",
+          "Latitude 5440",
+          "OptiPlex 7090",
+          "OptiPlex 7010",
+          "Precision 3560",
+          "PowerEdge R740"
+        ],
+        "HP": [
+          "EliteBook 840 G8",
+          "EliteBook 850 G9",
+          "ProBook 450 G9",
+          "ProDesk 400 G9",
+          "ZBook Firefly 14",
+          "LaserJet Pro M404"
+        ],
+        "Lenovo": [
+          "ThinkPad T14",
+          "ThinkPad E14",
+          "ThinkPad L14",
+          "ThinkCentre M70q",
+          "IdeaPad Slim 5",
+          "Legion 5"
+        ],
+        "Apple": [
+          "MacBook Air M2",
+          "MacBook Pro 14",
+          "Mac Mini M2",
+          "iMac 24"
+        ],
+        "Asus": [
+          "VivoBook 15",
+          "ZenBook 14",
+          "ExpertBook B1",
+          "ROG Strix G15"
+        ],
+        "Acer": [
+          "Aspire 5",
+          "TravelMate P2",
+          "Predator Helios",
+          "Veriton X"
+        ],
+        "Microsoft": [
+          "Surface Laptop 5",
+          "Surface Pro 9"
+        ],
+        "Cisco": [
+          "Catalyst 2960",
+          "ISR 4331",
+          "Meraki MR46",
+          "ASA 5506"
+        ],
+        "Fortinet": [
+          "FortiGate 60F",
+          "FortiGate 100F",
+          "FortiSwitch 108E"
+        ],
+        "Logitech": [
+          "MX Master 3",
+          "K380 Keyboard",
+          "C920 Webcam",
+          "M185 Mouse"
+        ],
+        "Samsung": [
+          "Galaxy Tab S9",
+          "27\" UR55 Monitor",
+          "990 Pro SSD"
+        ],
+        "LG": [
+          "24MP88 Monitor",
+          "Gram 16 Laptop",
+          "27UL850 Monitor"
+        ],
+        "Epson": [
+          "L3250 Printer",
+          "L6290 Printer",
+          "DS-530 Scanner"
+        ],
+        "Canon": [
+          "LBP6030 Printer",
+          "imageCLASS MF301",
+          "CanoScan LiDE"
+        ]
+      },
+      "brandsByType": {
+        "Laptop": {
+          "Dell": [
+            "Latitude 5420",
+            "Latitude 5430",
+            "Latitude 5440",
+            "Precision 3560",
+            "XPS 13",
+            "Latitude 3450"
+          ],
+          "HP": [
+            "EliteBook 840 G8",
+            "EliteBook 850 G9",
+            "ProBook 450 G9",
+            "ZBook Firefly 14",
+            "THINKPAD"
+          ],
+          "Lenovo": [
+            "ThinkPad T14",
+            "ThinkPad E14",
+            "ThinkPad L14",
+            "ThinkPad X1 Carbon",
+            "IdeaPad Slim 5"
+          ],
+          "Apple": [
+            "MacBook Air M2",
+            "MacBook Air M3",
+            "MacBook Pro 14",
+            "MacBook Pro 16",
+            "speed"
+          ],
+          "Asus": [
+            "VivoBook 15",
+            "ZenBook 14",
+            "ExpertBook B1"
+          ],
+          "Acer": [
+            "Aspire 5",
+            "TravelMate P2",
+            "Swift 3"
+          ],
+          "Microsoft": [
+            "Surface Laptop 5",
+            "Surface Laptop Go 3"
+          ],
+          "Zebronics": [
+            "Zx11"
+          ]
+        },
+        "Desktop": {
+          "Dell": [
+            "OptiPlex 7090",
+            "OptiPlex 7010",
+            "Precision 3660",
+            "Vostro 3030",
+            "latitude 3450"
+          ],
+          "HP": [
+            "ProDesk 400 G9",
+            "EliteDesk 800 G9",
+            "Pavilion Desktop"
+          ],
+          "Lenovo": [
+            "ThinkCentre M70q",
+            "ThinkCentre M90q",
+            "IdeaCentre 3"
+          ],
+          "Asus": [
+            "ExpertCenter D5",
+            "ROG Strix GT"
+          ],
+          "Acer": [
+            "Veriton X",
+            "Aspire TC"
+          ]
+        },
+        "Monitor": {
+          "Lenovo": [
+            "ThinkVision T24",
+            "ThinkVision T27",
+            "ThinkVision P27h"
+          ],
+          "Dell": [
+            "P2422H",
+            "U2722D",
+            "E2423H"
+          ],
+          "HP": [
+            "E24 G5",
+            "Z24f G3",
+            "M27f"
+          ],
+          "LG": [
+            "24MP88",
+            "27UL850",
+            "27GN800"
+          ],
+          "Samsung": [
+            "S24R350",
+            "27\" UR55",
+            "Odyssey G5"
+          ],
+          "BenQ": [
+            "GW2480",
+            "PD2700Q"
+          ],
+          "Acer": [
+            "KA242Y",
+            "CB242Y"
+          ]
+        },
+        "Keyboard": {
+          "Dell": [
+            "KB216",
+            "KM5221W",
+            "KB522"
+          ],
+          "Logitech": [
+            "K380",
+            "K120",
+            "MX Keys",
+            "MK270"
+          ],
+          "HP": [
+            "225 USB Keyboard",
+            "350 Compact"
+          ],
+          "Lenovo": [
+            "ThinkPad TrackPoint Keyboard",
+            "Go Wireless"
+          ],
+          "Zebronics": [
+            "Zeb-KM2100",
+            "Zeb-Companion 2"
+          ]
+        },
+        "Mouse": {
+          "Dell": [
+            "MS116",
+            "WM126",
+            "MS5320W"
+          ],
+          "Logitech": [
+            "M185",
+            "M331",
+            "MX Master 3",
+            "M650"
+          ],
+          "HP": [
+            "FM710A",
+            "X500",
+            "280 Silent"
+          ],
+          "Lenovo": [
+            "Go Wireless",
+            "ThinkPad USB-C"
+          ],
+          "Zebronics": [
+            "Zeb-Blaze",
+            "Zeb-Jaguar"
+          ]
+        },
+        "UPS": {
+          "Microtek": [
+            "Legend 650",
+            "Legend 1000",
+            "Energy Save 1500"
+          ],
+          "APC": [
+            "Back-UPS 600",
+            "Back-UPS 1100",
+            "Smart-UPS 1500"
+          ],
+          "Emerson": [
+            "Liebert GXT4",
+            "Liebert PSI"
+          ],
+          "Eaton": [
+            "5E 650i",
+            "5E 1100i"
+          ],
+          "Luminous": [
+            "Pro 600",
+            "Zelio 1100"
+          ]
+        },
+        "Printer": {
+          "HP": [
+            "Smart Tank 580",
+            "Smart Tank 589",
+            "LaserJet Pro M404",
+            "M126nw"
+          ],
+          "Canon": [
+            "LBP6030",
+            "imageCLASS MF301",
+            "PIXMA G3730"
+          ],
+          "Epson": [
+            "L3250",
+            "L6290",
+            "DS-530"
+          ],
+          "Brother": [
+            "DCP-L2520D",
+            "HL-L2351DW"
+          ],
+          "hp": []
+        },
+        "QR Scanner": {
+          "Tera": [
+            "HW0002",
+            "HW0008",
+            "D5100"
+          ],
+          "Zebra": [
+            "DS2208",
+            "LI4278",
+            "DS8108"
+          ],
+          "Honeywell": [
+            "1900GHD",
+            "1470G"
+          ],
+          "Datalogic": [
+            "QuickScan QD2430",
+            "Gryphon GD4500"
+          ]
+        },
+        "Network Switch": {
+          "TP-Link": [
+            "TL-SG108E",
+            "TL-SG116E",
+            "TL-SG1024DE"
+          ],
+          "Cisco": [
+            "Catalyst 2960",
+            "CBS350-8T"
+          ],
+          "D-Link": [
+            "DGS-108",
+            "DGS-1210-08"
+          ],
+          "Netgear": [
+            "GS108",
+            "GS308"
+          ],
+          "HPE": [
+            "Aruba 1930 8G",
+            "OfficeConnect 1820"
+          ]
+        },
+        "Camera": {
+          "Hikvision": [
+            "DS-2CD1023G0",
+            "DS-2CD2043G2"
+          ],
+          "CP Plus": [
+            "CP-PLUS Dome",
+            "CP-PLUS Bullet"
+          ],
+          "Dahua": [
+            "DH-IPC-HFW1230S",
+            "DH-IPC-HDBW1230E"
+          ],
+          "TP-Link VIGI": [
+            "C400",
+            "C200",
+            "C500"
+          ]
+        },
+        "NVR": {
+          "TP-Link VIGI": [
+            "NVR1008H",
+            "NVR1016H"
+          ],
+          "Hikvision": [
+            "DS-7104NI",
+            "DS-7604NI"
+          ],
+          "Dahua": [
+            "NVR4104",
+            "NVR4216"
+          ],
+          "CP Plus": [
+            "CP-UVR-0401E1",
+            "CP-UVR-0801E1"
+          ]
+        },
+        "Network Rack": {
+          "Netrack": [
+            "9U Wall Mount",
+            "15U Floor",
+            "42U Server Rack"
+          ],
+          "APW": [
+            "6U Wall",
+            "12U Floor"
+          ],
+          "Rittal": [
+            "TS IT 19\"",
+            "AX Compact"
+          ]
+        },
+        "Laptop Kit": {
+          "Dell": [
+            "Latitude Kit",
+            "Mobile Workstation Kit"
+          ],
+          "HP": [
+            "EliteBook Kit",
+            "ProBook Kit"
+          ],
+          "Lenovo": [
+            "ThinkPad Kit",
+            "Travel Kit"
+          ]
+        },
+        "Attendance Machine": {
+          "ZKTeco": [
+            "K40 Pro",
+            "iClock 680",
+            "MB360"
+          ],
+          "eSSL": [
+            "K21 Pro",
+            "F18",
+            "X990"
+          ],
+          "Realtime": [
+            "T502",
+            "RS20"
+          ],
+          "Hikvision": [
+            "DS-K1T671M",
+            "DS-K1T804A"
+          ]
+        },
+        "External HDD": {
+          "Seagate": [
+            "Backup Plus 1TB",
+            "Expansion 2TB",
+            "Portable 4TB"
+          ],
+          "Western Digital": [
+            "My Passport 1TB",
+            "Elements 2TB"
+          ],
+          "Toshiba": [
+            "Canvio Basics 1TB",
+            "Canvio Advance 2TB"
+          ],
+          "Samsung": [
+            "T7 Shield 1TB",
+            "T7 2TB"
+          ]
+        },
+        "Access Point": {
+          "TP-Link": [
+            "EAP225",
+            "EAP245",
+            "Archer AX23"
+          ],
+          "Cisco": [
+            "Meraki MR36",
+            "Catalyst 9120"
+          ],
+          "Ubiquiti": [
+            "UniFi AP AC Lite",
+            "UniFi 6 Lite"
+          ],
+          "D-Link": [
+            "DAP-2610",
+            "DAP-1860"
+          ],
+          "Aruba": [
+            "AP-505",
+            "Instant On AP22"
+          ]
+        },
+        "Firewall": {
+          "Fortinet": [
+            "FortiGate 60F",
+            "FortiGate 100F",
+            "FortiGate 200F"
+          ],
+          "Cisco": [
+            "ASA 5506",
+            "Firepower 1010"
+          ],
+          "SonicWall": [
+            "TZ270",
+            "TZ470"
+          ],
+          "pfSense": [
+            "SG-1100",
+            "Netgate 4100"
+          ],
+          "WatchGuard": [
+            "T20",
+            "T40"
+          ]
+        },
+        "Network Controller": {
+          "Cisco": [
+            "3504 WLC",
+            "9800-CL",
+            "Catalyst 9800-L"
+          ],
+          "Aruba": [
+            "7005",
+            "9012"
+          ],
+          "TP-Link Omada": [
+            "OC200",
+            "OC300"
+          ],
+          "Ruckus": [
+            "R350",
+            "SmartZone 100"
+          ]
+        },
+        "Screwdriver Set": {
+          "BOSCH": [
+            "B-TL5256"
+          ]
+        },
+        "Pneumatic Screw Gun": {
+          "6SLD-Japan": [
+            "Screwing6S"
+          ]
+        },
+        "Antivirus License": {
+          "jdjfj": [
+            "efjre"
+          ]
+        }
+      },
+      "vendors": [
+        "DAKSh"
+      ],
+      "departments": [
+        "Admin",
+        "Engineering",
+        "Finance",
+        "HR",
+        "IT",
+        "Maintenance",
+        "Production",
+        "Purchase",
+        "Quality",
+        "Sales",
+        "Security",
+        "Store"
+      ],
+      "ram": [],
+      "ssd": [],
+      "cpu": [],
+      "windowsVersion": [],
+      "subCategories": {
+        "Vehicle Assets": [],
+        "Production Assets": [
+          "Pneumatic Screw Gun"
+        ],
+        "Software / License Assets": []
+      },
+      "deletedOptions": {
+        "subCategories": [
+          "Vehicle Assets:E-Rickshaw",
+          "Vehicle Assets:Company Car",
+          "Vehicle Assets:Bike",
+          "Vehicle Assets:Battery Vehicle",
+          "Software / License Assets:Tally License"
+        ],
+        "brands": [
+          "Laptop:TOYOTA",
+          "Laptop:STANLEY Multi-Tool Set",
+          "Laptop:Lakdi Furniture and Interiors",
+          "Laptop:Karam",
+          "Laptop:Indo",
+          "Laptop:Mahindra",
+          "Laptop:Havells",
+          "Laptop:Geeken",
+          "Laptop:Boch",
+          "Screwdriver Set:Bosh"
+        ],
+        "vendors": [
+          "GEEKEN FURNITURE",
+          "Bosch India",
+          "Thirty six Toyota",
+          "STANLEY Multi-Tool Set",
+          "Daksh",
+          "Dash",
+          "Dell India",
+          "HCL Infosystems",
+          "HP Enterprise",
+          "Indo India",
+          "Ingram Micro",
+          "Intech Systems",
+          "Karam India",
+          "Lakdi Furniture and Interior",
+          "Lenovo India",
+          "Rashi Peripherals",
+          "Redington",
+          "Savex Technologies",
+          "Softcell"
+        ],
+        "models": [
+          "Laptop:HP:ELITEBOOK8400 G8"
+        ],
+        "cpu": [
+          "Apple M1"
+        ]
+      }
+    }
+  }
+}

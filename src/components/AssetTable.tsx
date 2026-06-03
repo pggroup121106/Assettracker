@@ -9,6 +9,7 @@ interface AssetTableProps {
   onEdit: (asset: Asset) => void;
   onDelete: (id: number) => void;
   onViewQR: (asset: Asset) => void;
+  onViewAsset: (asset: Asset) => void;
   role?: string;
   allowDelete?: boolean;
 }

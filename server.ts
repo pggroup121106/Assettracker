@@ -1330,6 +1330,7 @@ app.delete("/api/inventory/:itemId", async (req, res) => {
           category: "IT Assets",
           status: "Available",
           quantity: 0,
+          minStock: 0,
         },
         proxyToGas
       );
@@ -1524,6 +1525,7 @@ app.post("/api/assets", async (req, res) => {
           category: String(assetData.mainCategory || "IT Assets"),
           status: "Damaged",
           quantity: 1,
+          minStock: 0,
         });
       } catch (err) {
         console.error("Failed to add damaged asset to inventory:", err);
@@ -1608,6 +1610,7 @@ app.put("/api/assets/:id", async (req, res) => {
           category: String(assetData.mainCategory || "IT Assets"),
           status: "Damaged",
           quantity: 1,
+          minStock: 0,
         });
       } catch (err) {
         console.error("Failed to add damaged asset to inventory:", err);

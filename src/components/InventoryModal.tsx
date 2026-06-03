@@ -29,7 +29,7 @@ export default function InventoryModal({ open, initial, onClose, onSaved }: Inve
       inventory
         .filter(item => item.category === (form.category || visibleCategories[0]) && item.brandName)
         .map(item => item.brandName.trim())
-    )).sort((a, b) => a.localeCompare(b));
+    )).sort((a: string, b: string) => a.localeCompare(b));
   }, [inventory, form.category, visibleCategories]);
 
   const modelOptions = useMemo(() => {
@@ -37,7 +37,7 @@ export default function InventoryModal({ open, initial, onClose, onSaved }: Inve
       inventory
         .filter(item => item.category === (form.category || visibleCategories[0]) && item.brandName === form.brandName && item.model)
         .map(item => item.model.trim())
-    )).sort((a, b) => a.localeCompare(b));
+    )).sort((a: string, b: string) => a.localeCompare(b));
   }, [inventory, form.category, form.brandName, visibleCategories]);
 
   useEffect(() => {
